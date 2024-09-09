@@ -38,6 +38,20 @@ namespace Day2AutomationTest.NewTestModules
             Assert.That(getIntouchPage.IsSuccessMsgDisplayed());
         }
 
+        [Test]
+
+        public void POMTest4()
+        {
+            homePage.NavigateToHomePage();
+            driver.FindElement(By.CssSelector(".fc-button-label")).Click();
+
+            homePage.ClickContactUs();
+
+            contactUsPage.FillContactUsForm("Sele", "sele@abc.com", "Booked appointment", "Appointment wscheduled as discussed");
+
+            Assert.That(getIntouchPage.IsSuccessMsgDisplayed());
+        }
+
         [TearDown]
         public void TearDown()
         {
